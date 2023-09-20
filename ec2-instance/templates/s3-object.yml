@@ -10,5 +10,6 @@ spec:
     contentBase64: {{ .Files.Get "kubernetes.webp" | b64enc }}
     key: {{ .Values.fileName }}
     region: {{ .Values.region }}
+    contentType: image/webp
   providerConfigRef:
     name: default
