@@ -1,0 +1,14 @@
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Object
+metadata:
+  name: {{ .Values.fileName}}
+spec:
+  forProvider:
+    bucketSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+    contentBase64: {{ .Files.Get "kubernetes.webp" | b64enc }}
+    key: {{ .Values.fileName }}
+    region: {{ .Values.region }}
+  providerConfigRef:
+    name: default

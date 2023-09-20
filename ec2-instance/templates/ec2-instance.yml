@@ -1,0 +1,17 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: Instance
+metadata:
+  labels:
+    testing.upbound.io/example-name: web
+  name: web
+  namespace: {{ .Release.Namespace}}
+spec:
+  forProvider:
+    ami: {{ .Values.ami }}
+    availabilityZone: {{ .Values.availabilityZone }}
+    instanceType: {{ .Values.instanceType }}
+    region: {{ .Values.region }}
+    tags:
+      {{- range $key, $value := .Values.tags }}
+      {{ $key }}: {{ $value }}
+      {{- end }}

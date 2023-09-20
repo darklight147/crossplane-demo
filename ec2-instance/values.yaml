@@ -1,0 +1,13 @@
+ami: ami-053b0d53c279acc90
+
+region: us-east-1
+
+availabilityZone: us-east-1a
+
+instanceType: t3.micro
+
+tags:
+  Name: ec2-instance
+  Environment: dev
+
+fileName: kubernetes

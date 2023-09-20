@@ -1,0 +1,12 @@
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  annotations:
+    meta.upbound.io/example-id: s3/v1beta1/bucketaccelerateconfiguration
+  labels:
+    testing.upbound.io/example-name: example
+  name: bucket-{{ .Release.Name }}
+  namespace: {{ .Release.Namespace}}
+spec:
+  forProvider:
+    region: {{ .Values.region}}
