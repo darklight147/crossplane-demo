@@ -8,6 +8,9 @@ metadata:
 spec:
   providerConfigRef:
     name: default
+  writeConnectionSecretToRef:
+    - name: web-connection
+      namespace: {{ .Release.Namespace }}
   forProvider:
     ami: {{ .Values.ami }}
     availabilityZone: {{ .Values.availabilityZone }}
