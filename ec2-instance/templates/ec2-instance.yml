@@ -17,3 +17,6 @@ spec:
       {{- range $key, $value := .Values.tags }}
       {{ $key }}: {{ $value }}
       {{- end }}
+    vpcSecurityGroupIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example

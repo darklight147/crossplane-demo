@@ -11,3 +11,5 @@ tags:
   Environment: dev
 
 fileName: kubernetes
+
+vpcID: vpc-2e8ea054
