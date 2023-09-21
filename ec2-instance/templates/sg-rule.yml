@@ -43,7 +43,7 @@ kind: SecurityGroupRule
 metadata:
   annotations:
     meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
-  name: test-vpc-securitygroup-2
+  name: test-vpc-securitygroup-3
 spec:
   deletionPolicy: Delete
   forProvider:
