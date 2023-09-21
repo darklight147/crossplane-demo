@@ -1,0 +1,28 @@
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: SecurityGroup
+metadata:
+  name: instance-sg
+  labels:
+    testing.upbound.io/example-name: example
+spec:
+  forProvider:
+    region: {{ .Values.region }}
+    vpcID: {{ .Values.vpcID }}
+    groupName: instance-sg
+    description: Testing security group
+    # ignoreIngress: true
+    # ignoreEgress: true
+    ingress:
+      - fromPort: 80
+        toPort: 80
+        ipProtocol: tcp
+        ipRanges:
+          - cidrIp: 10.0.0.0/8
+    egress:
+      - fromPort: -1
+        toPort: -1
+        ipProtocol: tcp
+        ipRanges:
+          - cidrIp: 0.0.0.0/0
+  providerConfigRef:
+    name: example
