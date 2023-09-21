@@ -11,18 +11,12 @@ spec:
     groupName: instance-sg
     description: Testing security group
     # ignoreIngress: true
-    # ignoreEgress: true
+    ignoreEgress: true
     ingress:
       - fromPort: 80
         toPort: 80
         ipProtocol: tcp
         ipRanges:
           - cidrIp: 10.0.0.0/8
-    egress:
-      - fromPort: -1
-        toPort: -1
-        ipProtocol: tcp
-        ipRanges:
-          - cidrIp: 0.0.0.0/0
   providerConfigRef:
     name: example
