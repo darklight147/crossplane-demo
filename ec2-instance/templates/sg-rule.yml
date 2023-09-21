@@ -1,0 +1,37 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: SecurityGroupRule
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
+  name: test-vpc-securitygroup
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    type: ingress
+    fromPort: 22
+    toPort: 22
+    protocol: tcp
+    region: {{ .Values.region }}
+    securityGroupIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+    self: true
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: SecurityGroupRule
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
+  name: test-vpc-securitygroup-2
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    type: ingress
+    fromPort: 80
+    toPort: 80
+    protocol: tcp
+    region: {{ .Values.region }}
+    securityGroupIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+    self: true
