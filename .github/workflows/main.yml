@@ -15,7 +15,7 @@ jobs:
 
       - name: Template the helm chart
         run: |
-          helm template ./ec2-instance
+          helm lint ./ec2-instance
           
           if [ $? -eq 0 ]; then
             echo "Helm template succeeded"
