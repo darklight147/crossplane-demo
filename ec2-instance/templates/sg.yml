@@ -7,7 +7,6 @@ metadata:
 spec:
   forProvider:
     region: {{ .Values.region }}
-    groupName: instance-sg
     description: Testing security group
     # ignoreIngress: true
     ignoreEgress: true
