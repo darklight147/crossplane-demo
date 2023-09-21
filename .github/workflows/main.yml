@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  template:
+    name: Template the helm chart
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Helm tool installer
+        uses: Azure/setup-helm@v1
+
+      - name: Template the helm chart
+        run: |
+          helm template ./ec2-instance
+          
+          if [ $? -eq 0 ]; then
+            echo "Helm template succeeded"
+          else
+            echo "Helm template failed"
+            exit 1
+          fi
