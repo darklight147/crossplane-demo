@@ -15,7 +15,8 @@ spec:
     securityGroupIdSelector:
       matchLabels:
         testing.upbound.io/example-name: example
-    self: true
+    cidrBlocks:
+      - 10.0.0.0/16
 ---
 apiVersion: ec2.aws.upbound.io/v1beta1
 kind: SecurityGroupRule
@@ -34,4 +35,25 @@ spec:
     securityGroupIdSelector:
       matchLabels:
         testing.upbound.io/example-name: example
-    self: true
+    cidrBlocks:
+      - 10.0.0.0/16
+---
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: SecurityGroupRule
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
+  name: test-vpc-securitygroup-2
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    type: egress
+    fromPort: -1
+    toPort: -1
+    protocol: tcp
+    region: {{ .Values.region }}
+    securityGroupIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+    cidrBlocks:
+      - 10.0.0.0/16
