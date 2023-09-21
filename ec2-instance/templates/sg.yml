@@ -8,13 +8,5 @@ spec:
   forProvider:
     region: {{ .Values.region }}
     description: Testing security group
-    # ignoreIngress: true
-    ignoreEgress: true
-    ingress:
-      - fromPort: 80
-        toPort: 80
-        ipProtocol: tcp
-        ipRanges:
-          - cidrIp: 10.0.0.0/8
   providerConfigRef:
     name: example
