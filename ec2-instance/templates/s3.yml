@@ -5,8 +5,11 @@ metadata:
     meta.upbound.io/example-id: s3/v1beta1/bucketaccelerateconfiguration
   labels:
     testing.upbound.io/example-name: example
-  name: bucket-{{ .Release.Name }}
+  name: my-bucket
   namespace: {{ .Release.Namespace}}
 spec:
   forProvider:
-    region: {{ .Values.region}}
+    region: {{ .Values.region }}
+  providerConfigRef:
+    name: default
+  
