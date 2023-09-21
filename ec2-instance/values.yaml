@@ -13,3 +13,5 @@ tags:
 fileName: kubernetes
 
 vpcID: vpc-2e8ea054
+
+keyPairName: my-key-pair

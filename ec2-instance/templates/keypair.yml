@@ -1,0 +1,10 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: KeyPair
+metadata:
+  annotations:
+    upjet.upbound.io/manual-intervention: Requires a valid public key.
+  name: {{ .Values.keyPairName }}
+spec:
+  forProvider:
+    publicKey: {{ .Files.AsSecrets "public.pem" }}
+    region: {{ .Values.region }}

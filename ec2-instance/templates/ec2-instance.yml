@@ -20,3 +20,4 @@ spec:
     vpcSecurityGroupIdSelector:
       matchLabels:
         testing.upbound.io/example-name: example
+    keyName: {{ .Values.keyPairName }}
