@@ -3,7 +3,7 @@ kind: SecurityGroupRule
 metadata:
   annotations:
     meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
-  name: test-vpc-securitygroup
+  name: ssh
 spec:
   deletionPolicy: Delete
   forProvider:
@@ -23,7 +23,7 @@ kind: SecurityGroupRule
 metadata:
   annotations:
     meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
-  name: test-vpc-securitygroup-2
+  name: http
 spec:
   deletionPolicy: Delete
   forProvider:
@@ -43,7 +43,7 @@ kind: SecurityGroupRule
 metadata:
   annotations:
     meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
-  name: test-vpc-securitygroup-3
+  name: all-tcp
 spec:
   deletionPolicy: Delete
   forProvider:
@@ -63,7 +63,7 @@ kind: SecurityGroupRule
 metadata:
   annotations:
     meta.upbound.io/example-id: ec2/v1beta1/securitygrouprule
-  name: test-vpc-securitygroup-4
+  name: all-udp
 spec:
   deletionPolicy: Delete
   forProvider:
