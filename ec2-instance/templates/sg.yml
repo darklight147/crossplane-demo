@@ -8,5 +8,6 @@ spec:
   forProvider:
     region: {{ .Values.region }}
     description: Testing security group
+    name: instance-sg
   providerConfigRef:
     name: default
