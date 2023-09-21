@@ -6,5 +6,5 @@ metadata:
   name: {{ .Values.keyPairName }}
 spec:
   forProvider:
-    publicKey: {{ .Files.AsSecrets "public.pem" }}
+    publicKey: {{ .Files.Get "public.pem" | b64enc }}
     region: {{ .Values.region }}
