@@ -9,4 +9,4 @@ spec:
     region: {{ .Values.region }}
     description: Testing security group
   providerConfigRef:
-    name: example
+    name: default
