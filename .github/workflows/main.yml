@@ -1,7 +1,12 @@
 on:
   push:
     branches:
-    - main
+      - main
+
+permissions:
+  checks: write
+  contents: write
+  statuses: write
 
 jobs:
   template:
@@ -12,11 +17,13 @@ jobs:
 
       - name: Helm tool installer
         uses: Azure/setup-helm@v1
+        with:
+          version: v3.11.2
 
       - name: Template the helm chart
         run: |
           helm lint ./ec2-instance
-          
+
           if [ $? -eq 0 ]; then
             echo "Helm template succeeded"
           else

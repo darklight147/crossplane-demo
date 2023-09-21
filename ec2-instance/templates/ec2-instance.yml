@@ -4,7 +4,7 @@ metadata:
   labels:
     testing.upbound.io/example-name: web
   name: web
-  namespace: {{ .Release.Namespace}}
+  namespace: {{ .Release.Namespace }}
 spec:
   providerConfigRef:
     name: default
