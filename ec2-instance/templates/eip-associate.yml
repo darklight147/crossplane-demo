@@ -5,6 +5,8 @@ metadata:
     testing.upbound.io/example-name: eip_assoc
   name: eip-assoc
 spec:
+  providerConfigRef:
+    name: default
   forProvider:
     allocationIdSelector:
       matchLabels:

@@ -6,6 +6,8 @@ metadata:
   name: web
   namespace: {{ .Release.Namespace}}
 spec:
+  providerConfigRef:
+    name: default
   forProvider:
     ami: {{ .Values.ami }}
     availabilityZone: {{ .Values.availabilityZone }}

@@ -5,6 +5,8 @@ metadata:
     testing.upbound.io/example-name: eip
   name: eip
 spec:
+  providerConfigRef:
+    name: default
   forProvider:
     region: {{ .Values.region }}
     vpc: true
