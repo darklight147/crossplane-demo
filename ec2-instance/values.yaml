@@ -4,7 +4,7 @@ region: us-east-1
 
 availabilityZone: us-east-1a
 
-instanceType: t3.medium
+instanceType: t3.micro
 
 tags:
   Name: ec2-instance
